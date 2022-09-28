@@ -13,6 +13,6 @@ public class Main {
 
 //        Strings in Java
         String s  = "I hate Java";
-        System.out.println(s.charAt(3));
+        System.out.println(s.charAt(4));
     }
 }
