@@ -29,6 +29,9 @@ public class Main {
         int v = 8;
         int b = 6;
 
+//        Strings in Java
+        String s  = "I hate Java";
+        System.out.println(s.charAt(4));
 //        Adition
         System.out.println(v+b);
 
@@ -48,5 +51,9 @@ public class Main {
         System.out.println(v >= b);
         System.out.println(v > b);
         System.out.println(v < b);
+
+
+//Largest of N numbers
+
     }
 }
