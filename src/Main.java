@@ -11,6 +11,8 @@ public class Main {
         boolean bool = true;
         System.out.println(bool);
 
-
+//        Strings in Java
+        String s  = "I hate Java";
+        System.out.println(s.charAt(3));
     }
 }
