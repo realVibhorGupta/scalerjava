@@ -1,5 +1,8 @@
 <component name="CopyrightManager">
-  <settings>
+  <settings default="Sunshine.Code">
+    <module2copyright>
+      <element module="All" copyright="Sunshine.Code" />
+    </module2copyright>
     <LanguageOptions name="JAVA">
       <option name="fileTypeOverride" value="3" />
     </LanguageOptions>
