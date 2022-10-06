@@ -12,17 +12,20 @@
 
 public class Alarm {
 
-    /*make single beep sound*/
-    public void beep(){
+    public static void main(String[] args) {
 
-    }
+        String googol = "1";
+        int len  = googol.length();
+        int lenNew  = googol.length();
+        while (len < 101){
+            googol = googol + "0";
+            len = googol.length();
 
-    public boolean checkAlarm(){
-
-        return  true;
-    }
-
-    public void alarm(){
-
+//            len++;
+            lenNew = googol.length();
+        }
+        System.out.println(googol);
+        System.out.println("length of googol is : " + len);
+        System.out.println("length of googol is : " + lenNew);
     }
 }
