@@ -54,7 +54,22 @@ public class Arrays {
         }
 
 
+
 //        Find maximum value In an array
+
+        int[] arrayMax =  {5, -3, 7,6,2,1,8,3,0,4};
+
+        int max= Integer.MIN_VALUE ; //worst case scenario
+
+        for(int i = 0; i <arrayMax.length  ; i++) {
+                if(arrayMax[i] > max){
+                    max = arrayMax[i];
+                }
+        }
+        System.out.println(max);
+
+
+//Reverse an array
 
     }
 }
