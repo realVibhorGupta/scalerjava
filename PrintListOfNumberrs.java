@@ -1,6 +1,6 @@
 public class PrintListOfNumberrs {
 
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
 
 //        for (int  i =  1 ;  i < 11 ;  i++) {
 //            System.out.println(i);

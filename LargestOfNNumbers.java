@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class LargestOfNNumbers {
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
         System.out.println("Enter the number of Elements");
         Scanner scanner = new Scanner(System.in);
 

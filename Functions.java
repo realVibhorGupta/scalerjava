@@ -15,7 +15,7 @@ public class Functions {
 // the correct range of roll values no matter the number of sides provided.
 // ex. For an 8-sided dice the numbers returned should be integers between 1-8
 
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
 
         rollDice(8);
     }

@@ -1,5 +1,5 @@
 public class PrrintSeriesThree {
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
 //        1,4,9,16,25
 
         int a=1 ,i;

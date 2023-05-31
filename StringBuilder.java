@@ -1,7 +1,7 @@
 public class StringBuilder {
 
 
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
 //        StringBuilder sb = new StringBuilder("Good Morning");
 //        sb.insert(1, "Friend ");
 //        System.out.println(sb.toString());

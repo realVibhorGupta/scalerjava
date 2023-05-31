@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class PrimeNumber {
 
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
         int a = 1 , i ;
         Scanner scanner = new Scanner(System.in);
         a= scanner.nextInt();

@@ -13,7 +13,7 @@
 import java.util.Scanner;
 
 public class CountDigitsInAGiivenNumber {
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 //        Counter Is used to hold the value

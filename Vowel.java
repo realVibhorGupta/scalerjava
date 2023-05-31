@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Vowel {
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
         Scanner scanner = new Scanner(System.in);
         char vowel = scanner.next().charAt(0);
 

@@ -15,7 +15,7 @@
 import java.util.Scanner;
 
 public class FormalArgumentsAndActualArguments {
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
         int a ,b,c;
         Scanner scanner=new Scanner(System.in);
         a = scanner.nextInt();

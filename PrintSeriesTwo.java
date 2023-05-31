@@ -1,6 +1,6 @@
 public class PrintSeriesTwo {
 //1,2,6,24,120 limit x = 10
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
 
         int a = 1 , b = 1;
         int x = 10;

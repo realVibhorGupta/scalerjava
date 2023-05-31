@@ -11,7 +11,7 @@
  */
 
 public class Arrays {
-    public static void main(String[] args){
+    public static void main(StringClass[] args){
         int[] array = {3,4,5,6};
 
         int[] array2 = new int[10];

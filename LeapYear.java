@@ -13,7 +13,7 @@
 import java.util.Scanner;
 
 public class LeapYear {
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
         System.out.println("Enter The Year");
         Scanner scanner = new Scanner(System.in);
         int year = scanner.nextInt();

@@ -13,7 +13,7 @@
 import java.util.Scanner;
 
 public class SwitchCase {
-    public static void main(String[] args) {
+    public static void main(StringClass[] args) {
         //Complete this switch statement by 1) writing the last case (case 12), so that it prints out "December"
 // and 2) writing a default case that for any month number not between 1 and 12, will print out "Invalid month"
 
