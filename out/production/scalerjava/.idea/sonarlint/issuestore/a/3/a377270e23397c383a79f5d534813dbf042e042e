@@ -1,0 +1,14 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.( Œ÷…øÿÿÿÿ8»óá‡1
+[
+java:S1854"9Remove this useless assignment to local variable "array".(¦»‰Œşÿÿÿÿ8Ì¿Œƒ‡1
+T
+java:S1854"7Remove this useless assignment to local variable "key".(ö×ôë8Ëƒ‡1
+H
+java:S1172"+Remove this unused method parameter "args".(“£‡8Îóá‡1
+L
+java:S1481"*Remove this unused "array" local variable.(¦»‰Œşÿÿÿÿ8à¿Œƒ‡1
+E	java:S108")Either remove or fill this block of code.(Æ¾áÃ8á¿Œƒ‡1
+E
+java:S1481"(Remove this unused "key" local variable.(ö×ôë8©Ëƒ‡1
