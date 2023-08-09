@@ -34,3 +34,15 @@ A
 LinearSearch.java,a/3/a377270e23397c383a79f5d534813dbf042e042e
 H
 ArithmeticOperation.java,5/8/58b0a5e0170b1ff024341e5cba33dba556083f53
+?
+SwitchCase.java,f/a/fa5ea0cbcd5296177bcf6053e201016eaf47caee
+G
+LogiclaAndOperator.java,0/6/061b3df2d6589d4d025a7546fade102558f0d46d
+7
+test.kt,b/6/b600e571325b38465b85b3b2ec102cea8eb4fec9
+>
+Delegations.kt,0/b/0b4f075244e05028f3373cf2a80662515164b9cf
+7
+.replit,e/2/e255e037e87583c6886a88ab92aee98483135150
+K
+AriithmaticUsingSwitch.java,c/0/c0780dbc5569024fa396b07f4b0e9138ca084120
