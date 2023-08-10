@@ -10,23 +10,17 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
-
-public class Pattern17 {
+public class BitwiseOperator {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        String star = "*";
+        int a = 4 , b=6;
+        System.out.println(a&b);
+        System.out.println(a|b);
+        System.out.println(~a);
+        System.out.println(a^b);
+        System.out.println(" ++++++  ");
+        System.out.println(a>>1);
+        System.out.println(a>>2);
+        System.out.println(a>>2);
 
-        for (int i = 0; i < n ; i++) {
-            for (int j = 1; j <n-i+1 ; j++) {
-                System.out.print(star);
-
-            }
-//            for (int k = 0; k <= i; k++) {
-//                System.out.print(" ");
-//            }
-            System.out.println();
-        }
     }
 }
