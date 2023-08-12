@@ -30,8 +30,6 @@ J
 Arrays.java,f/7/f7ca844a15dbe7f70d79920de1e15e08574049ec
 <
 Pyramid.java,1/2/12ba71dad4c889c4193221d71aa9926cfdb39dd3
-A
-LinearSearch.java,a/3/a377270e23397c383a79f5d534813dbf042e042e
 H
 ArithmeticOperation.java,5/8/58b0a5e0170b1ff024341e5cba33dba556083f53
 ?

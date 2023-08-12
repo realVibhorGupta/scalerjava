@@ -10,29 +10,35 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class ReverseAnArray {
 
-public class LinearSearch {
-
-    public static boolean isAvailable(int arr[], int size, int element) {
-        for (int i = 0; i < size; i++) {
-            if (arr[i] == element) {
-                return true;
-            }
+    public static void reverseAnArray(int array[], int size) {
+        int start = 0;
+        int end = size - 1;
+        while (start <= end) {
+            swap(array, start, end);
+            start++;
+            end--;
         }
-        return false;
     }
+
+    private static void swap(int arr[], int index1, int index2) {
+        int temp;
+        temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+
 
     public static void main(String[] args) {
 
-//    Whether is 1 is present or not
-        int[] arr = {5, 7, -2, 10, 22, -2, 0, 5, 22, 1};
-        System.out.println("Enter The Element");
-        Scanner scanner = new Scanner(System.in);
-        int key = scanner.nextInt();
+        int array[] = {2, 3, 4, 5, 6, 67, 8, 81, 3, 38};
 
-        boolean found = isAvailable(arr, 10, key);
-        System.out.println(found);
-//        Check weather It contains 1 or Not
+        reverseAnArray(array, array.length);
+        // Print the reversed array
+        System.out.println("Reversed Array:");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
     }
 }

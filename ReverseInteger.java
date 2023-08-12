@@ -12,27 +12,27 @@
 
 import java.util.Scanner;
 
-public class LinearSearch {
+public class ReverseInteger {
+    static int reverseInteger(int num) {
+        int counter = 0;
 
-    public static boolean isAvailable(int arr[], int size, int element) {
-        for (int i = 0; i < size; i++) {
-            if (arr[i] == element) {
-                return true;
-            }
+        while (num >= 0) {
+           int digit = num % 10;
+            if (counter > Integer.MAX_VALUE / 10 || (counter == Integer.MAX_VALUE / 10 && digit > 7))
+                return 0;
+            if (counter < Integer.MIN_VALUE / 10 || (counter == Integer.MIN_VALUE / 10 && digit < -8))
+                return 0;
+            counter =  ( counter * 10 )+ digit;
+            num = num/10;
         }
-        return false;
+        return counter;
     }
 
     public static void main(String[] args) {
-
-//    Whether is 1 is present or not
-        int[] arr = {5, 7, -2, 10, 22, -2, 0, 5, 22, 1};
-        System.out.println("Enter The Element");
         Scanner scanner = new Scanner(System.in);
-        int key = scanner.nextInt();
+        int value = scanner.nextInt();
 
-        boolean found = isAvailable(arr, 10, key);
-        System.out.println(found);
-//        Check weather It contains 1 or Not
+        System.out.println(reverseInteger(value));
+
     }
 }

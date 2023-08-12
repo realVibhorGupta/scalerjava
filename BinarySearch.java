@@ -9,30 +9,39 @@
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-
-import java.util.Scanner;
-
-public class LinearSearch {
-
-    public static boolean isAvailable(int arr[], int size, int element) {
-        for (int i = 0; i < size; i++) {
-            if (arr[i] == element) {
-                return true;
+//a array
+public class BinarySearch {
+    static int binarySearch(int[] array, int size, int key) {
+        int start = 0;
+        int end = size - 1;
+        int mid = start + (end-start)/2;
+        while (start <= end) {
+            if (array[mid] == key) {
+                return mid;
             }
+
+//go to right side
+            if (key > array[mid]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+            mid =  start + (end-start)/2;
         }
-        return false;
+        return -1;
     }
 
     public static void main(String[] args) {
 
-//    Whether is 1 is present or not
-        int[] arr = {5, 7, -2, 10, 22, -2, 0, 5, 22, 1};
-        System.out.println("Enter The Element");
-        Scanner scanner = new Scanner(System.in);
-        int key = scanner.nextInt();
+        int even[] = {2, 3, 6, 9, 13, 56};
+        int odd[] = {45,76,87,134,674};
 
-        boolean found = isAvailable(arr, 10, key);
-        System.out.println(found);
-//        Check weather It contains 1 or Not
+        int evenIndex = binarySearch(even,6,13);
+        int oddIndex= binarySearch(odd,5,76);
+        int oddIndex1= binarySearch(odd,5,726);
+
+        System.out.println(evenIndex);
+        System.out.println(oddIndex);
+        System.out.println(oddIndex1);
     }
 }

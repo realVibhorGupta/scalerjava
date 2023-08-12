@@ -10,29 +10,24 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class SwapAlternate {
 
-public class LinearSearch {
+    static void swapAlternate(int[] array, int index1, int index2) {
 
-    public static boolean isAvailable(int arr[], int size, int element) {
-        for (int i = 0; i < size; i++) {
-            if (arr[i] == element) {
-                return true;
-            }
-        }
-        return false;
+        int temp ;
+        index2=index1+1;
+
+//        if()
+        temp = array[index1];
+        array[index1] = array[index2];
+        array[index2]=temp;
     }
 
     public static void main(String[] args) {
 
-//    Whether is 1 is present or not
-        int[] arr = {5, 7, -2, 10, 22, -2, 0, 5, 22, 1};
-        System.out.println("Enter The Element");
-        Scanner scanner = new Scanner(System.in);
-        int key = scanner.nextInt();
+        int array[] = { 1,2,34,4,5,7,2,9,5,1};
 
-        boolean found = isAvailable(arr, 10, key);
-        System.out.println(found);
-//        Check weather It contains 1 or Not
+
+//        swapAlternate(array,);
     }
 }
