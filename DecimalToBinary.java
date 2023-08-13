@@ -12,10 +12,24 @@
 
 import java.util.Scanner;
 
-public class SunOfTwoMetrics {
-
+public class DecimalToBinary {
     public static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
+        int inputValue = input.nextInt();
+        int result = 0;
+        int i = 0;
+        while (inputValue != 0) {
+            int digit = inputValue & 1;
+            result = (int) ((digit * Math.pow(10, i)) + result);
+            inputValue = inputValue >> 1;
+            i++;
 
+            if(inputValue <0){
+
+            }
+        }//TODO:For negitive Number
+        System.out.println("Result is: " + result);
     }
 }
+

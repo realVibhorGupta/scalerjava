@@ -21,6 +21,9 @@ public class ComplementOfBase10 {
         int counter = 0 ;
 
 
+        while(value!=0){
+
+        }
 
 
     }

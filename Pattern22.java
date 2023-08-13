@@ -12,10 +12,31 @@
 
 import java.util.Scanner;
 
-public class SunOfTwoMetrics {
-
+public class Pattern22 {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int inputValue = input.nextInt();
 
+        for (int i = 1; i <= inputValue; i++) {
+            int counter = 1;
+
+            for (int j = 1; j <= inputValue -i ; j++) {
+                System.out.print(" "+ " " );
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print(counter + " ");
+
+                counter++;
+            }
+
+            for (int l = i; l > i -1 ; l--) {
+                System.out.print(counter + " ");
+                counter--;
+            }
+
+            System.out.println();
+        }
 
     }
 }
+

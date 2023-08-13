@@ -11,4 +11,18 @@
  */
 
 public class DuplicateInArray {
+
+    public static void main(String[] args) {
+       int[] array = {2,45,67,33,66,67,2,45};
+
+//        findDuplicate(array,8,)
+
+    }
+
+    private static int findDuplicate(int[] array, int size) {
+        for (int i = 0; i < size; i++) {
+
+        }
+        return 1;
+    }
 }

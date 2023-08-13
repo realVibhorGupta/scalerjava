@@ -12,15 +12,19 @@
 
 public class SwapAlternate {
 
-    static void swapAlternate(int[] array, int index1, int index2) {
+    static void swapAlternate(int[] array, int index1, int size) {
 
+        for(int i =0; i <= size ;i++ ){
+            if(i+1 < size){
+
+            }
+        }
         int temp ;
-        index2=index1+1;
-
-//        if()
-        temp = array[index1];
-        array[index1] = array[index2];
-        array[index2]=temp;
+//        index2=index1+1;
+////        if()
+//        temp = array[index1];
+//        array[index1] = array[index2];
+//        array[index2]=temp;
     }
 
     public static void main(String[] args) {
