@@ -10,40 +10,52 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class Bound {
+    static int firstOccurrence(int arr[], int size, int key) {
+        int start = 0, end = size - 1;
 
-public class PowerOfNumber {
+        int mid = start + (end - start) / 2;
+        int result = -1;
+        while (start <= end) {
+            if (arr[mid] == key) {
+                result = mid;
+                end = mid - 1;
+            } else if (key > arr[mid]) {
+                start = mid + 1;
 
-    static boolean isPowerOfTwo(int number){
-        for (int i = 0; i <= 30; i++) {
-            int ans = (int) Math.pow(2,i);
-            if(ans == number ){
-                return true;
+            } else {
+                end = mid - 1;
             }
+            mid = start + (end - start) / 2;
         }
-
-        return  false;
+        return result;
     }
-    public boolean isPowerOfTwoBetter(int n) {
-        int ans = 1;
-        for (int i = 0; i <= 30; i++) {
-            if(ans == n ){
-                return true;
-            }
-            if(ans < Integer.MAX_VALUE/2) {
-                ans = ans * 2;
-            }
 
+    static int lastOccurrence(int arr[], int size, int key) {
+        int start = 0, end = size - 1;
 
+        int mid = start + (end - start) / 2;
+        int result = -1;
+        while (start <= end) {
+            if (arr[mid] == key) {
+                result = mid;
+                start = mid + 1;
+            } else if (key > arr[mid]) {
+                start = mid + 1;
+
+            } else {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
         }
-
-        return  false;
+        return result;
     }
+
     public static void main(String[] args) {
-        System.out.println(isPowerOfTwo(8));
-        System.out.println(isPowerOfTwo(9));
-        System.out.println(isPowerOfTwo(16));
+        int[] even = {1, 2, 3, 3,3, 6, 7, 8};
 
+        System.out.println("First occurance of 3 is:" + firstOccurrence(even, 8, 3));
+        System.out.println("Last occurance of 3 is:" + lastOccurrence(even, 8, 3));
     }
 }
-
+//to find total occurance formula = last-first+1

@@ -13,18 +13,34 @@
 import java.util.Scanner;
 
 public class ComplementOfBase10 {
+    public int bitwiseComplement(int n) {
+        if (n == 0) {
+            return 1;
+        }
+
+        int mask = 1;
+        while (mask < n) {
+            mask = (mask << 1) | 1;
+        }
+
+        return n ^ mask;
+    }
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         int value = scanner.nextInt();
+        int m = value;
+        int mask = 0;
 
-        int counter = 0 ;
 
-
-        while(value!=0){
-
+        while (value != 0) {
+            //to make nmask = 11111 we left shift and add it with OR
+            mask = (mask << 1) | 1;
+            m = m >> 1;
         }
+        int ans = (-value) & mask;
 
+        System.out.println(ans);
 
     }
 }

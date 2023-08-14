@@ -10,40 +10,38 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-public class PowerOfNumber {
+public class UniqueNumberOfOccurrence {
+    public static boolean uniqueOccurrences(int[] arr) {
+        Map<Integer, Integer> occurrenceMap = new HashMap<>();
 
-    static boolean isPowerOfTwo(int number){
-        for (int i = 0; i <= 30; i++) {
-            int ans = (int) Math.pow(2,i);
-            if(ans == number ){
-                return true;
-            }
+        for (int num : arr) {
+            occurrenceMap.put(num, occurrenceMap.getOrDefault(num, 0) + 1);
         }
 
-        return  false;
-    }
-    public boolean isPowerOfTwoBetter(int n) {
-        int ans = 1;
-        for (int i = 0; i <= 30; i++) {
-            if(ans == n ){
-                return true;
+        Set<Integer> uniqueOccurrences = new HashSet<>();
+        for (int count : occurrenceMap.values()) {
+            if (uniqueOccurrences.contains(count)) {
+                return false;
             }
-            if(ans < Integer.MAX_VALUE/2) {
-                ans = ans * 2;
-            }
-
-
+            uniqueOccurrences.add(count);
         }
 
-        return  false;
+        return true;
     }
+
     public static void main(String[] args) {
-        System.out.println(isPowerOfTwo(8));
-        System.out.println(isPowerOfTwo(9));
-        System.out.println(isPowerOfTwo(16));
+        int[] arr1 = {1, 2, 2, 1, 1, 3};
+        System.out.println(uniqueOccurrences(arr1)); // Output: true
 
+        int[] arr2 = {1, 2};
+        System.out.println(uniqueOccurrences(arr2)); // Output: false
+
+        int[] arr3 = {-3, 0, 1, -3, 1, 1, 1, -3, 10, 0};
+        System.out.println(uniqueOccurrences(arr3)); // Output: true
     }
 }
-

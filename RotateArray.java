@@ -10,40 +10,13 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
-public class PowerOfNumber {
-
-    static boolean isPowerOfTwo(int number){
-        for (int i = 0; i <= 30; i++) {
-            int ans = (int) Math.pow(2,i);
-            if(ans == number ){
-                return true;
-            }
-        }
-
-        return  false;
-    }
-    public boolean isPowerOfTwoBetter(int n) {
-        int ans = 1;
-        for (int i = 0; i <= 30; i++) {
-            if(ans == n ){
-                return true;
-            }
-            if(ans < Integer.MAX_VALUE/2) {
-                ans = ans * 2;
-            }
-
-
-        }
-
-        return  false;
-    }
+public class RotateArray {
     public static void main(String[] args) {
-        System.out.println(isPowerOfTwo(8));
-        System.out.println(isPowerOfTwo(9));
-        System.out.println(isPowerOfTwo(16));
+
+        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        ArrayList arrayList = new ArrayList();
 
     }
 }
-

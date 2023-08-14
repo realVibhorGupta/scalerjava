@@ -11,27 +11,53 @@
  */
 
 public class SwapAlternate {
+    static void printArray(int array[], int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print(array[i] + "");
+        }
+    }
 
-    static void swapAlternate(int[] array, int index1, int size) {
+    private static void swap(int arr, int arr1) {
+        int temp;
+        temp = arr;
+        arr = arr1;
+        arr = temp;
+    }
 
-        for(int i =0; i <= size ;i++ ){
-            if(i+1 < size){
+    private static void swap(int arr[], int index1, int index2) {
+        int temp;
+        temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
 
+
+    private static void swapAlternate(int[] array, int size) {
+
+        for (int i = 0; i < size; i += 2) {
+            if (i + 1 < size) {
+                swap(array, i,i + 1);
             }
         }
-        int temp ;
-//        index2=index1+1;
-////        if()
-//        temp = array[index1];
-//        array[index1] = array[index2];
-//        array[index2]=temp;
+
     }
+//    private static void swap(int[] arr, int index1, int index2) {
+//        int temp ;
+//        temp = arr[index1];
+//        arr[index1] = arr[index2];
+//        arr[index2] = temp;
+//
+//    }
 
     public static void main(String[] args) {
 
-        int array[] = { 1,2,34,4,5,7,2,9,5,1};
+        int even[] = {1, 2, 34, 4, 5, 7, 2, 9, 5, 11};
+        int odd[] = {1, 2, 34, 4, 5, 7, 2, 9, 5};
 
 
-//        swapAlternate(array,);
+        swapAlternate(even, 10);
+        swapAlternate(odd, 9);
+        printArray(even, 10);
+        printArray(odd , 9);
     }
 }

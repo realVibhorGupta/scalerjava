@@ -10,40 +10,26 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class PeakIndexInAMountainArray {
+    static int peak(int[] arr, int key) {
+        int start = 0;
+        int end = arr.length - 1;
+        int mid = start + (end - start) / 2;
 
-public class PowerOfNumber {
-
-    static boolean isPowerOfTwo(int number){
-        for (int i = 0; i <= 30; i++) {
-            int ans = (int) Math.pow(2,i);
-            if(ans == number ){
-                return true;
+        while (start <= end) {
+            if (arr[mid] < arr[mid + 1]) {
+                start = mid + 1;
+            } else {
+                end = mid;
             }
+            mid = start + (end - start) / 2;
         }
-
-        return  false;
+        return start;
     }
-    public boolean isPowerOfTwoBetter(int n) {
-        int ans = 1;
-        for (int i = 0; i <= 30; i++) {
-            if(ans == n ){
-                return true;
-            }
-            if(ans < Integer.MAX_VALUE/2) {
-                ans = ans * 2;
-            }
 
-
-        }
-
-        return  false;
-    }
     public static void main(String[] args) {
-        System.out.println(isPowerOfTwo(8));
-        System.out.println(isPowerOfTwo(9));
-        System.out.println(isPowerOfTwo(16));
+
+        int[] array = {2, 3, 5};
 
     }
 }
-

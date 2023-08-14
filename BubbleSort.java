@@ -10,40 +10,37 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class BubbleSort {
+    private static void swap(int arr[], int index1, int index2) {
+        int temp;
+        temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
 
-public class PowerOfNumber {
+    static void bubbleSort(int array[]) {
 
-    static boolean isPowerOfTwo(int number){
-        for (int i = 0; i <= 30; i++) {
-            int ans = (int) Math.pow(2,i);
-            if(ans == number ){
-                return true;
+
+//        for rounds
+        for (int i = 0; i < array.length - 1; i++) {
+            boolean isSwaped = false;
+
+            for (int j = 0; j < array.length-i-1; j++) {
+                if(array[j]>array[j+1]){
+                    swap(array,j,j+1);
+                    isSwaped = true;
+                }
+            }
+            if (isSwaped == false) {
+                break;
             }
         }
 
-        return  false;
     }
-    public boolean isPowerOfTwoBetter(int n) {
-        int ans = 1;
-        for (int i = 0; i <= 30; i++) {
-            if(ans == n ){
-                return true;
-            }
-            if(ans < Integer.MAX_VALUE/2) {
-                ans = ans * 2;
-            }
 
-
-        }
-
-        return  false;
-    }
     public static void main(String[] args) {
-        System.out.println(isPowerOfTwo(8));
-        System.out.println(isPowerOfTwo(9));
-        System.out.println(isPowerOfTwo(16));
+        int array[] = {10, 1, 7, 6, 15, 9};
+      bubbleSort(array);
 
     }
 }
-
