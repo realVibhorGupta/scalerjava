@@ -10,21 +10,31 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class InsertionSort {
 
-public class Palindrome {
+    static void insertionSort(int array[]) {
+        int j;
+        for (int i = 0; i < array.length - 1; i++) {
+            int temp = array[i];
+            for (j = i - 1; j > 0; j--) {
+                if (array[j] > temp) {
+                    array[j + 1] = array[j];
+                } else {
+                    break;
+                }
 
-    public static void main(String[] args) {
-        int temp, r;
-        Scanner input = new Scanner(System.in);
-        int number = input.nextInt();
 
-        int sum = 0;
-        temp = number;
-        while(number!=0){
-            int digit = number % 10;
-          //  sum = sum
+            }
+            array[j + 1] = temp;
+            System.out.println(array[j+1]);
+            System.out.println(array[i]);
         }
 
+
+    }
+
+    public static void main(String[] args) {
+        int array[] = {3,55,32,145,22,99};
+        insertionSort(array);
     }
 }

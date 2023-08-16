@@ -10,21 +10,28 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class PivotInAnArray {
+    static int getPivot(int array[], int size) {
+        int start = 0;
+        int end = size - 1;
+        int mid = start + (end - start) / 2;
 
-public class Palindrome {
+        while (start < end) {
+            if (array[mid] >= array[0]) {
+                start = mid + 1;
 
-    public static void main(String[] args) {
-        int temp, r;
-        Scanner input = new Scanner(System.in);
-        int number = input.nextInt();
+            } else {
+                end = mid;
+            }
+            mid = start + (end - start) / 2;
 
-        int sum = 0;
-        temp = number;
-        while(number!=0){
-            int digit = number % 10;
-          //  sum = sum
         }
 
+        return start;
+    }
+
+    public static void main(String[] args) {
+      int array[] = {3,8,10,45,22,9};
+        System.out.println("Pivot is :"+getPivot(array,6));
     }
 }

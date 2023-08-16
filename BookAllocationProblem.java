@@ -10,21 +10,19 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class BookAllocationProblem {
+//    Binary Search example
+    int booksAllocate(int[] array, int  size,int key) {
+        int max = 0;
+        int min = 0 ;
+        for (int i = 0; i < array.length - 1; i++) {
 
-public class Palindrome {
+        }
+
+        return  1;
+    }
 
     public static void main(String[] args) {
-        int temp, r;
-        Scanner input = new Scanner(System.in);
-        int number = input.nextInt();
-
-        int sum = 0;
-        temp = number;
-        while(number!=0){
-            int digit = number % 10;
-          //  sum = sum
-        }
 
     }
 }

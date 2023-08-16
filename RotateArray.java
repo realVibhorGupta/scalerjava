@@ -10,13 +10,31 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.ArrayList;
-
 public class RotateArray {
+
+    public static void rotate(int[] nums, int k) {
+        int n = nums.length;
+        int[] temp = new int[n];
+
+        for (int i = 0; i < nums.length ; i++) {
+            temp[(i+k) % nums.length] = nums[i];
+        }
+        //copy the temp into the array
+//        nums = temp;
+        System.arraycopy(temp, 0, nums, 0, n);
+    }
+
     public static void main(String[] args) {
 
         int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-        ArrayList arrayList = new ArrayList();
+        int k = 3; // Number of positions to rotate
+
+        rotate(arr, k);
+
+        // Print the rotated array
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
 
     }
 }

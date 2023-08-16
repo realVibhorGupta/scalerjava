@@ -10,21 +10,37 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+public class SelectionSort {
+    public static void selectionSort(int array[]) {
 
-public class Palindrome {
 
-    public static void main(String[] args) {
-        int temp, r;
-        Scanner input = new Scanner(System.in);
-        int number = input.nextInt();
+        for (int i = 0; i < array.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < array.length - 1; j++) {
+                if (array[j] < array[minIndex]) {
 
-        int sum = 0;
-        temp = number;
-        while(number!=0){
-            int digit = number % 10;
-          //  sum = sum
+                    minIndex = j;
+
+                }
+            }
+
+            swap(array, minIndex, i);
+            System.out.print("["+array[i]  + "]");
+
         }
 
+    }
+
+    private static void swap(int arr[], int i, int i1) {
+        int temp;
+        temp = arr[i];
+        arr[i] = arr[i1];
+        arr[i1] = temp;
+    }
+
+    public static void main(String[] args) {
+
+        int arr[] = {2, 6, 88, 23, 65, 1, 9, 0, 44, 76, 94};
+        selectionSort(arr);
     }
 }

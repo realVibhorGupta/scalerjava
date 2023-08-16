@@ -10,21 +10,22 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
-
-public class Palindrome {
+public class CheckifAnArrayIsSortedAndRotated {
+    public static boolean check(int nums[]) {
+        int count = 0 ;
+        int n = nums.length;
+        for (int i = 1; i < nums.length ; i++) {
+            if(nums[i-1]>nums[i]){
+                count++ ;
+            }
+        }
+        if(nums[n-1] >nums[0]){
+            count++;
+        }
+        return count<=1;
+    }
 
     public static void main(String[] args) {
-        int temp, r;
-        Scanner input = new Scanner(System.in);
-        int number = input.nextInt();
-
-        int sum = 0;
-        temp = number;
-        while(number!=0){
-            int digit = number % 10;
-          //  sum = sum
-        }
 
     }
 }
