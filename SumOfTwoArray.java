@@ -10,35 +10,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class StringsEquivalent {
-    class Solution {
-        public boolean checkAlmostEquivalent(String word1, String word2) {
-            int[] freq1 = new int[26]; // Frequency array for characters in word1
-            int[] freq2 = new int[26]; // Frequency array for characters in word2
-
-            // Count the frequency of characters in word1
-            for (char c : word1.toCharArray()) {
-                freq1[c - 'a']++;
-            }
-
-            // Count the frequency of characters in word2
-            for (char c : word2.toCharArray()) {
-                freq2[c - 'a']++;
-            }
-
-
-            // Compare the frequencies of characters
-            for (int i = 0; i < 26; i++) {
-                if (Math.abs(freq1[i] - freq2[i]) > 3) {
-                    return false;
-                }
-            }
-
-            return true; // Return true if differences are at most 3
-        }
-    }
-
-
+public class SumOfTwoArray {
     public static void main(String[] args) {
 
     }

@@ -10,54 +10,49 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class Power {
+public class PainterPartitionProblem {
 
-    public static int power(int a, int b){
-        int result =  1;
-        for (int i = 1; i <= b  ; i++) {
-            result = result * a;
+    static int getPartition(int[] array, int m, int n) {
+
+        int result = -1;
+        int start = 0;
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += array[i];
+        }
+        int end = sum;
+        int mid = start + (end - start) / 2;
+        while (start <= end) {
+            if (isPossible(array, n, m, mid)) {
+                result = mid;
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+            mid = start + (end - start) / 2;
         }
         return result;
     }
-    public static void main(String[] args) {
 
-        System.out.println(power(2,3));
-
+    static boolean isPossible(int[] array, int m, int n, int mid) {
+        int studentCount = 1;
+        int pageSum = 0;
+        for (int i = 0; i < n; i++) {
+            if (pageSum + array[i] <= mid) {
+                pageSum += array[i];
+            } else {
+                studentCount++;
+                if (studentCount > n || array[i] > mid) {
+                    return false;
+                }
+                pageSum = array[i];
+            }
+        }
+        return true;
     }
 
-        public double myPow(double x, int n) {
-            if (x == 0) {
-                return 0; // 0 raised to any power is still 0
-            }
-
-            if (n == 0) {
-                return 1; // Any number raised to the power of 0 is 1
-            }
-
-            double result = 1.0;
-            long absN = Math.abs((long) n); // Handle integer overflow for n = Integer.MIN_VALUE
-
-            while (absN > 0) {
-                if (absN % 2 == 1) { // If n is odd
-                    result *= x;
-                }
-                x *= x; // Square x
-                absN /= 2; // Divide n by 2
-            }
-
-            return n < 0 ? 1.0 / result : result;
-        }
-        static double morePrecision(int n,int precesion,  int tempSolution){
-            double factor = 1;
-            double answer = tempSolution;
-            for (int i = 0; i < precesion; i++) {
-                factor = factor / 10;
-                for (double j = answer; j*j < n; j=j+factor) {
-                        answer=j;
-                }
-            }
-            return answer;
-        }
+    public static void main(String[] args) {
 
 
+    }
 }

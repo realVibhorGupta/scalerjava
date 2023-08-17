@@ -21,11 +21,11 @@ public class BinarySearch {
             }
 
 //go to right side
-            if (key > array[mid]) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
+                if (key > array[mid]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
             mid =  start + (end-start)/2;
         }
         return -1;

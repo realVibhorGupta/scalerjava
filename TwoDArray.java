@@ -10,54 +10,38 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class Power {
+import java.util.Scanner;
 
-    public static int power(int a, int b){
-        int result =  1;
-        for (int i = 1; i <= b  ; i++) {
-            result = result * a;
-        }
-        return result;
-    }
+public class TwoDArray {
     public static void main(String[] args) {
+        //Creating an 2D array
 
-        System.out.println(power(2,3));
+        //Insert an input
+        //array[i][j]
+        //Output
+        //array[i][j]
+        //
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input total row : ");
+        int row = sc.nextInt();
+        System.out.print("Input total column : ");
+        int col = sc.nextInt();
 
+        int[][] array = new int[row][col];
+        System.out.print("Enter the number of elements you want to store: ");
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.println("Row [" + i + "]:  Column " + j + " :");
+                array[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print(array[i][j] + " ");
+
+            }
+            System.out.println();
+        }
     }
-
-        public double myPow(double x, int n) {
-            if (x == 0) {
-                return 0; // 0 raised to any power is still 0
-            }
-
-            if (n == 0) {
-                return 1; // Any number raised to the power of 0 is 1
-            }
-
-            double result = 1.0;
-            long absN = Math.abs((long) n); // Handle integer overflow for n = Integer.MIN_VALUE
-
-            while (absN > 0) {
-                if (absN % 2 == 1) { // If n is odd
-                    result *= x;
-                }
-                x *= x; // Square x
-                absN /= 2; // Divide n by 2
-            }
-
-            return n < 0 ? 1.0 / result : result;
-        }
-        static double morePrecision(int n,int precesion,  int tempSolution){
-            double factor = 1;
-            double answer = tempSolution;
-            for (int i = 0; i < precesion; i++) {
-                factor = factor / 10;
-                for (double j = answer; j*j < n; j=j+factor) {
-                        answer=j;
-                }
-            }
-            return answer;
-        }
-
-
 }

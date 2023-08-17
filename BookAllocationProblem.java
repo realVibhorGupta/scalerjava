@@ -12,14 +12,48 @@
 
 public class BookAllocationProblem {
 //    Binary Search example
-    int booksAllocate(int[] array, int  size,int key) {
-        int max = 0;
-        int min = 0 ;
-        for (int i = 0; i < array.length - 1; i++) {
 
+    //books
+    //atleast one book
+    //book should be in Contigous manner
+
+    static boolean isPossible(int[] array, int m, int n, int mid) {
+        int studentCount = 1;
+        int pageSum = 0;
+        for (int i = 0; i < n; i++) {
+            if (pageSum + array[i] <= mid) {
+                pageSum += array[i];
+            } else {
+                studentCount++;
+                if (studentCount > n || array[i] > mid) {
+                    return false;
+                }
+                pageSum = array[i];
+            }
+        }
+        return true;
+    }
+
+    int booksAllocate(int[] array, int n, int m) {
+        int start = 0;
+        int sum = 0;
+        int answer = -1;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        int end = sum;
+        int mid = start + (end - start) / 2;
+        while (start <= end) {
+            if (isPossible(array, n, m, mid)) {
+                answer = mid;
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+            mid = start + (end - start) / 2;
         }
 
-        return  1;
+        return answer;
     }
 
     public static void main(String[] args) {
