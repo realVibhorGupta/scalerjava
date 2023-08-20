@@ -12,6 +12,26 @@
 
 public class AggressiveCowsProblem {
 
+    int getAggressiveCows(int[] arrays, int k) {
+        int start = 0;
+        int maxi = -1;
+        for (int i = 0; i < arrays.length; i++) {
+
+            maxi = max(maxi, arrays[i]);
+        }
+        int end = maxi;
+        int mid = start + (end - start) / 2;
+        while (start <= end) {
+
+        }
+
+        return maxi;
+    }
+
+    private int max(int maxi, int array) {
+        return 1;
+    }
+
     public static void main(String[] args) {
 
     }

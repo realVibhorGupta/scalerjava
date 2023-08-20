@@ -10,50 +10,39 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class BookAllocationProblem {
-//    Binary Search example
+import java.util.Stack;
 
-
-    static boolean isPossible(int[] array, int m, int n, int mid) {
-        int studentCount = 1;
-        int pageSum = 0;
-        for (int i = 0; i < n; i++) {
-            if (pageSum + array[i] <= mid) {
-                pageSum += array[i];
-            } else {
-                studentCount++;
-                if (studentCount > n || array[i] > mid) {
-                    return false;
-                }
-                pageSum = array[i];
-            }
+public class ReverseAStack {
+    public static void pushAtBottom(int data, Stack<Integer> stack) {
+        if (stack.isEmpty()) {
+            stack.push(data);
+            return;
         }
-        return true;
+        int top = stack.pop();
+        pushAtBottom(data, stack);
+        stack.push(top);
     }
 
-    int booksAllocate(int[] array, int n, int m) {
-        int start = 0;
-        int sum = 0;
-        int answer = -1;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+    public static void reverseAStack(Stack<Integer> stack){
+        if(stack.isEmpty()){
+           return ;
         }
-        int end = sum;
-        int mid = start + (end - start) / 2;
-        while (start <= end) {
-            if (isPossible(array, n, m, mid)) {
-                answer = mid;
-                end = mid - 1;
-            } else {
-                start = mid + 1;
-            }
-            mid = start + (end - start) / 2;
-        }
+        int top = stack.pop();
+        reverseAStack(stack);
+        pushAtBottom(top,stack);
 
-        return answer;
     }
-
     public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
 
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);
+        reverseAStack(stack);
+        while (!stack.isEmpty()) {
+            System.out.println(stack.peek());
+            stack.pop();
+        }
     }
 }
