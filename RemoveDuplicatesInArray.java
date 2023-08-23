@@ -10,23 +10,24 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class TowerOfHanoi {
-
-    static void towerOfHanoi(int numberOfElements, String source, String helper, String destination) {
-        //BASE CASE
-        if (numberOfElements == 1) {
-            System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-            return;
+public class RemoveDuplicatesInArray {
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0; // If the array is empty, no duplicates to remove
         }
-        towerOfHanoi(numberOfElements - 1, source, destination, helper);
-        System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-        towerOfHanoi(numberOfElements - 1, helper, source, destination);
 
+        int uniqueIndex = 0; // Index for placing unique elements
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[uniqueIndex]) {
+                uniqueIndex++;
+                nums[uniqueIndex] = nums[i]; // Place the unique element in the next position
+            }
+        }
+
+        return uniqueIndex + 1; // Return the length of the modified array/ Return the length of the modified array
     }
 
     public static void main(String[] args) {
-        int numberOfItems = 3;
-        towerOfHanoi(numberOfItems, "Source", "HELPER", "Destination");
 
     }
 }

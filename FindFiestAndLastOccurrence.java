@@ -10,23 +10,12 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class TowerOfHanoi {
+public class FindFiestAndLastOccurrence {
 
-    static void towerOfHanoi(int numberOfElements, String source, String helper, String destination) {
-        //BASE CASE
-        if (numberOfElements == 1) {
-            System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-            return;
-        }
-        towerOfHanoi(numberOfElements - 1, source, destination, helper);
-        System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-        towerOfHanoi(numberOfElements - 1, helper, source, destination);
+    public static int first = -1, last = -1;
 
-    }
-
+//    public static void firstAndLastOccurrence()
     public static void main(String[] args) {
-        int numberOfItems = 3;
-        towerOfHanoi(numberOfItems, "Source", "HELPER", "Destination");
 
     }
 }

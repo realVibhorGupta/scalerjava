@@ -10,23 +10,22 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class TowerOfHanoi {
-
-    static void towerOfHanoi(int numberOfElements, String source, String helper, String destination) {
-        //BASE CASE
-        if (numberOfElements == 1) {
-            System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-            return;
+public class PrintAStringInReverseRecursion {
+    public static void reverseString(String str, int index) {
+        if (index < 0) {
+            return; // Base case: stop recursion when index goes out of bounds
         }
-        towerOfHanoi(numberOfElements - 1, source, destination, helper);
-        System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-        towerOfHanoi(numberOfElements - 1, helper, source, destination);
+
+
+        System.out.print(str.charAt(index));
+        reverseString(str, index - 1);
 
     }
 
     public static void main(String[] args) {
-        int numberOfItems = 3;
-        towerOfHanoi(numberOfItems, "Source", "HELPER", "Destination");
+        String string = "VibhorGupta";
+        reverseString(string,string.length()-1);
+
 
     }
 }

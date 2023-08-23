@@ -10,23 +10,26 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class TowerOfHanoi {
+//TODO:
+public class ReversePairs {
+    public int reversePairs(int[] nums) {
+        int pairs = 0;
+        int left = 0;
+        int right = nums.length-1;
 
-    static void towerOfHanoi(int numberOfElements, String source, String helper, String destination) {
-        //BASE CASE
-        if (numberOfElements == 1) {
-            System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-            return;
+        while (left < right) {
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+
+            //update the array
+            left++;
+            right--;
         }
-        towerOfHanoi(numberOfElements - 1, source, destination, helper);
-        System.out.println("transfer disk " + numberOfElements + " from " + source + " to " + destination);
-        towerOfHanoi(numberOfElements - 1, helper, source, destination);
-
+        return pairs;
     }
 
     public static void main(String[] args) {
-        int numberOfItems = 3;
-        towerOfHanoi(numberOfItems, "Source", "HELPER", "Destination");
 
     }
 }
