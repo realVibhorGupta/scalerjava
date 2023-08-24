@@ -11,7 +11,7 @@
  */
 
 public class PeakIndexInAMountainArray {
-    static int peak(int[] arr, int key) {
+    static int peak(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
         int mid = start + (end - start) / 2;
@@ -26,7 +26,22 @@ public class PeakIndexInAMountainArray {
         }
         return start;
     }
+    public int peakIndexInMountainArray(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
 
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] < arr[mid + 1]) {
+                left = mid + 1; // Move left pointer to continue searching in the increasing part
+            } else {
+                right = mid; // Move right pointer to continue searching in the decreasing part
+            }
+        }
+
+        return left; // or return right, as they point to the same peak index
+    }
     public static void main(String[] args) {
 
         int[] array = {2, 3, 5};

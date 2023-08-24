@@ -10,56 +10,31 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class FindFiestAndLastOccurrence {
+import java.util.Arrays;
+public class LargestNumber {
 
-    public static int first = -1, last = -1;
+    public static String largestNumber(int[] nums) {
+        // Convert the integers to strings
+        // Convert the integers to strings and sort using a custom comparator
+        String[] numsStr = Arrays.stream(nums)
+                .mapToObj(Integer::toString)
+                .sorted((a, b) -> (b + a).compareTo(a + b))
+                .toArray(String[]::new);
 
-    public int[] firstAndLastOccurrence(int[] nums, int target) {
+        // Join the sorted strings to form the largest number
+        String result = String.join("", numsStr);
 
-        int[] result = {-1, -1};
-        result[0] = search(nums, target, true);
-        result[1] = search(nums, target, false);
-
-        if (result[0] != -1) {
-            result[1] = search(nums, target, false);
+        // Remove leading zeros
+        while (result.length() > 1 && result.charAt(0) == '0') {
+            result = result.substring(1);
         }
-        return result;
-    }
-
-    //fucnction to search the target Value
-    int search(int[] nums, int target, boolean isStartIndex) {
-
-        int start = 0;
-        int result = -1;
-        int end = nums.length - 1;
-
-        while (start < end) {
-            int mid = start + (end - start) / 2;
-
-
-            if (target < nums[mid]) {
-                end = end - 1;
-            } else if (target > nums[mid]) {
-                start = mid + 1;
-            } else {
-
-                //potential Answer fores
-                result = mid;
-                if (isStartIndex == true) {
-                    end = mid - 1;
-                } else {
-                    start = mid + 1;
-                }
-            }
-
-
-        }
-
 
         return result;
     }
 
     public static void main(String[] args) {
-
+        int[] nums = {3, 30, 34, 5, 9};
+        String result = largestNumber(nums);
+        System.out.println(result); // Output: "9534330"
     }
 }
