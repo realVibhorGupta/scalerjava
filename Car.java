@@ -10,16 +10,21 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class TargetIndices {
-//    public List<Integer> targetIndices(int[] nums, int target) {
-//
-//        if(nums.length == 0){
-//            return null;
-//        }
-////        if()
-//
-//    }
+import java.util.ArrayList;
+
+public class Car  implements Automobile{
+    @Override
+    public int numOfWheels() {
+        return 5;
+    }
+
     public static void main(String[] args) {
+        Car car = new Car();
+        System.out.println(car.numOfWheels());
+        System.out.println(car.move());
+        ArrayList an = new ArrayList();
 
     }
+
+
 }

@@ -10,16 +10,13 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class TargetIndices {
-//    public List<Integer> targetIndices(int[] nums, int target) {
-//
-//        if(nums.length == 0){
-//            return null;
-//        }
-////        if()
-//
-//    }
-    public static void main(String[] args) {
+public interface Automobile {
+    int numOfWheels();
+    default boolean move(){
+        System.out.println("Its moves");
+        return false;
+    }
+    interface  hasStepny{
 
     }
 }

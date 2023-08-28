@@ -10,10 +10,25 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class AggressiveCowProblem {
+import java.util.Locale;
+
+public class PalindromeStrings {
+    public static boolean isPalindrome(String string){
+        if(string == null || string.isEmpty()){
+            return false;
+        }
+        string = string.toLowerCase(Locale.ROOT);
+        for (int i = 0; i < string.length()/2; i++) {
+            char start = string.charAt(0);
+            char end = string.charAt(string.length()-1-i);
+            if(start!=end){
+                return  false;
+            }
+        }
+        return  true;
+    }
     public static void main(String[] args) {
 
-
-
+        System.out.println(isPalindrome(""));
     }
 }

@@ -10,45 +10,60 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class InfinityArray {
-//    static int result(int nums[], int target) {
-//        int start = 0;
-//        int end = 1;
-//        while (target > nums[end]) {
-//            int temp = end + 1;
-//            end = end + (end - start + 1) * 2;
-//            start = temp;
-//        }
-//        return result;
-//    }
+public class RBS {
+    static  int search (int[] arr , int target){
+        int pivot = findPivot(arr);
+        if(pivot == -1){
+            binarySearch(arr,target,0, arr.length -1);
+        }
 
-    public int binarySearcch(int nums[], int target, int start, int end) {
+        if(arr[pivot] == target){
+            return  pivot;
+        }
+        return -1;
+    }
+    static int binarySearch(int[] array, int target,int start, int end) {
          start = 0;
-         end = nums.length - 1;
-        int mid = start + (end - start) / 2;
-        //Base Cae
-        if (nums.length == 0) {
-            return -1;
-        }
-        //Edge case
-        if (nums[start] == nums[end]) {
-            target = nums[start];
-            return target;
-        }
-
+         end = array.length - 1;
+        int mid = start + (end-start)/2;
         while (start <= end) {
-            if (nums[mid] < target) {
-                start = mid + 1;
-
-            } else if (nums[mid] > target) {
-                end = mid - 1;
-            } else {
+            if (array[mid] == target) {
                 return mid;
             }
-            mid = start + (end - start) / 2;
 
+//go to right side
+            if (target > array[mid]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+            mid =  start + (end-start)/2;
         }
-
         return -1;
+    }
+    static int findPivot(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (mid < end && arr[mid] > arr[mid + 1]) {
+                return mid;
+            }
+            if (arr[mid] < arr[mid - 1]) {
+                return mid - 1;
+            }
+            if (arr[mid] <= arr[start]) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+
+
     }
 }

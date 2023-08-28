@@ -10,16 +10,12 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class TargetIndices {
-//    public List<Integer> targetIndices(int[] nums, int target) {
-//
-//        if(nums.length == 0){
-//            return null;
-//        }
-////        if()
-//
-//    }
+public class d {
     public static void main(String[] args) {
-
+        int a,b,c,d;
+        a=b=c=d=20;
+        a+=b-=c*=d/=20;
+        System.out.println("A="+a+"B="+b+"C="+c+"D="+d);
     }
+
 }
