@@ -10,31 +10,22 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class SearchInSortedArray {
+import java.util.ArrayList;
+import java.util.function.Consumer;
 
-
-
-    static int getPivot(int array[], int key) {
-        int start = 0;
-        int end = array.length - 1;
-        int mid = start + (end - start) / 2;
-
-        while (start < end) {
-            if (array[mid] >= array[0]) {
-                start = mid + 1;
-
-            } else {
-                end = mid;
-            }
-            mid = start + (end - start) / 2;
+public class LambdaF {
+    public static void main(String[] args) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            arrayList.add(i + 1);
 
         }
-        return start;
-    }
 
-    public static void main(String[] args) {
+        arrayList.forEach((item) ->
+                System.out.println(item * 2)
+        );
+        Consumer<Integer> fun = (item) -> System.out.println(item * 2);
 
-        int array[] = {7, 9, 1, 4, 5, 6};
 
     }
 }

@@ -10,12 +10,34 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.Scanner;
+import java.util.Arrays;
 
-public class SunOfTwoMetrics {
+public class BinarySearch2D {
+    public static int[] sortMatrix(int[][] matrix, int target) {
+        int row = 0;
+        int column = matrix.length - 1;
+        while (row < matrix.length && column >= 0) {
+            if (matrix[row][column] == target) {
+                return new int[]{row, column};
+            }
+            if (matrix[row][column] < target) {
+                row++;
+            } else {
+                column--;
+            }
+        }
+        return new int[]{-1, -1};
+    }
 
     public static void main(String[] args) {
+        int[][] arr = {
+                {10,20,30,40},
+                {15,25,35,45},
+                {17,27,37,47},
+                {22,32,42,50},
 
+        };
 
+        System.out.println(Arrays.toString(sortMatrix(arr,32)));
     }
 }
