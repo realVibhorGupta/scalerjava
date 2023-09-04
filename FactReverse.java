@@ -10,52 +10,15 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class SearchInRotatedArray {
-
-    static int findPivot(int[] array) {
-        int start = 0;
-        int end = array.length - 1;
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-
-            //4 cases
-            if ( mid < end && array[mid] > array[mid + 1]) {
-                return mid;
-            }
-            if (mid > start && array[mid] < array[mid - 1]) {
-                return mid - 1;
-            }
-
-            
-
-        }
-        return -1;
-    }
-
-    static int binarySearch(int[] array, int target, int start, int end) {
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-
-            if (target < array[mid]) {
-                end = mid - 1;
-            }
-            // [60, 50, 40, 30, 20, 10, 100, 90, 80, 70]
-            if (mid > start && array[mid] < array[mid - 1]) {
-                return mid - 1;
-            }
-            //11 13 15mid= 0 4 8
-            if (array[mid] <= array[start]) {
-                end = mid - 1;
-            } else {
-                start = mid + 1;
-            }
-        }
-        return -1;
-    }
-
+public class FactReverse {
+//    static int numberReverse(int n){
+//
+////        return numberReverse()
+//    }
 
     public static void main(String[] args) {
 
+
+
     }
 }
-
