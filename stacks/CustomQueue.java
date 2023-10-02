@@ -12,29 +12,63 @@
 
 package stacks;
 
-public class DynamicStack extends StackDemo {
+public class CustomQueue {
+    private final int[] data;
 
-    DynamicStack() {
-        super();
+    private static final int DEFAULT_SIZE = 10;
+
+    int endPtr = 0;
+
+    public CustomQueue(){
+        this(DEFAULT_SIZE);
     }
 
-    DynamicStack(int size) {
-        super(size);
+    public CustomQueue(int size) {
+        this.data = new int[size];
     }
 
-    @Override
-    public boolean push(int item) {
+    public boolean isFull() {
+        return endPtr == data.length; // ptr is at last index
+    }
+
+    public boolean isEmpty() {
+        return endPtr == 0;
+    }
+
+    public boolean insertItem(int item) {
         if (isFull()) {
-            //double the array
-            Object[] temp = new Object[data.length * 2];
-            //Copy all previous items in new data
-//            for (int i = 0; i < data.length; i++) {
-//                temp[i] = data[i];
-//            }
-            System.arraycopy(data, 0, temp, 0, data.length);
-            data = temp;
+            return false;
         }
-        //now we can push the item normal as we have taken care of having full stack
-        return super.push(item);
+        data[endPtr++] = item;
+        return true;
+    }
+
+    public int remove() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Queue is empty");
+        }
+
+        int removed = data[0];
+
+        // shift the elements to left
+        for (int i = 1; i < endPtr; i++) {
+            data[i-1] = data[i];
+        }
+        endPtr--;
+        return removed;
+    }
+
+    public int front() throws Exception{
+        if (isEmpty()) {
+            throw new Exception("Queue is empty");
+        }
+        return data[0];
+    }
+
+    public void display() {
+        for (int i = 0; i < endPtr; i++) {
+            System.out.print(data[i] + " <- ");
+        }
+        System.out.println("END");
     }
 }

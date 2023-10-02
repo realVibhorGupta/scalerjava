@@ -10,20 +10,22 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
+package stacks;
 
-public class QueueDemo {
-    public static void main(String[] args) {
-        Queue<Integer> queue =  new LinkedList<>();
-        queue.add(23);
-        System.out.println(queue.peek().getClass().getCanonicalName());
+public class MainQueue {
+    public static void main(String[] args) throws Exception {
+        CustomQueue customQueue = new CustomQueue(4);
+        customQueue.insertItem(3);
+        customQueue.insertItem(4);
+        customQueue.insertItem(6);
+        customQueue.insertItem(8);
 
+        customQueue.display();
+        System.out.println(customQueue.front());
 
-        //Resizable arrray, no thread safe , null elements are not allowed 
-        Deque<Integer > deque =  new ArrayDeque<>();
+        System.out.println(customQueue.remove());
+        customQueue.display();
+
 
     }
 }

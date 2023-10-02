@@ -12,29 +12,23 @@
 
 package stacks;
 
-public class DynamicStack extends StackDemo {
+public class StackMain {
 
-    DynamicStack() {
-        super();
-    }
+    public static void main(String[] args) throws Exception {
+//        StackDemo stackDemo = new StackDemo(5);
+        StackDemo stackDemo = new DynamicStack(5);
+        stackDemo.push(23);
+        stackDemo.push(2);
+        stackDemo.push(3);
+        stackDemo.push(235);
+        stackDemo.push(2352);
+        stackDemo.push(252);
 
-    DynamicStack(int size) {
-        super(size);
-    }
-
-    @Override
-    public boolean push(int item) {
-        if (isFull()) {
-            //double the array
-            Object[] temp = new Object[data.length * 2];
-            //Copy all previous items in new data
-//            for (int i = 0; i < data.length; i++) {
-//                temp[i] = data[i];
-//            }
-            System.arraycopy(data, 0, temp, 0, data.length);
-            data = temp;
-        }
-        //now we can push the item normal as we have taken care of having full stack
-        return super.push(item);
+        System.out.println(stackDemo.pop());
+        System.out.println(stackDemo.pop());
+        System.out.println(stackDemo.pop());
+        System.out.println(stackDemo.pop());
+        System.out.println(stackDemo.pop());
+        System.out.println(stackDemo.pop());
     }
 }
