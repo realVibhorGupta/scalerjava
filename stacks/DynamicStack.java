@@ -10,50 +10,30 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-public class StackDemo {
-    protected Object[] data;
-    int ptr = -1;
-    protected static final int DEFAULT_SIZE = 10;
+package stacks;import stacks.StackDemo;
 
-    public StackDemo() {
-        this(DEFAULT_SIZE);
+public class DynamicStack extends StackDemo {
+
+    DynamicStack() {
+        super();
     }
 
-    public StackDemo(int size) {
-        this.data = new Object[size];
+    DynamicStack(int size) {
+
     }
 
-
+    @Override
     public boolean push(int item) {
         if (isFull()) {
-            System.out.println("Stack is full");
-            return false;
+            //double the array
+            Object[] temp = new Object[data.length * 2];
+            //Copy all previous items in new data
+            for (int i = 0; i < data.length; i++) {
+                temp[i] = data[i];
+            }
+            data = temp;
         }
-        ptr++;
-        data[ptr] = item;
-        return true;
+        //now we can push the item normall as we have taken care of having full stack
+        return super.push(item);
     }
-
-    public boolean isFull() {
-        return ptr == data.length - 1; // ptr is at the last node
-    }
-
-    public boolean isEmpty() {
-        return ptr == -1; // ptr is at the last node
-    }
-
-    public Object pop() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Cannot Pop As Stack is null");
-        }
-        return data[ptr--];
-    }
-
-    public Object peek() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Cannot Peek As Stack is null");
-        }
-        return data[ptr];
-    }
-
 }

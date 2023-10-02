@@ -11,6 +11,19 @@
  */
 
 public class SumOfTwoArray {
+
+//    public int[] sumOFTwoArrays(int[] array1, int[] array2){
+//        if(array1.length == 0){
+//            return new int[]{Arrays.stream(array2).sum()};
+//        }
+//
+//        if(array2.length ==0){
+//            return new int[]{Arrays.stream(array1).sum()}
+//        }
+//
+//        return new int[]
+//
+//    }
     public static void main(String[] args) {
 
     }
