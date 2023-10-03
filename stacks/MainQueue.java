@@ -26,6 +26,14 @@ public class MainQueue {
         System.out.println(customQueue.remove());
         customQueue.display();
 
+        CircularQueue circularQueue = new CircularQueue(5);
+        circularQueue.insertItem(3);
+        circularQueue.insertItem(4);
+        circularQueue.insertItem(5);
+        circularQueue.insertItem(6);
+        circularQueue.insertItem(7);
+
+        
 
     }
 }

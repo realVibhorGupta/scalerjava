@@ -12,66 +12,31 @@
 
 package stacks;
 
-public class CircularQueue {
+public class DynamicQueue extends CircularQueue {
 
-    protected int[] data;
-
-    private static final int DEFAULT_SIZE = 10;
-
-    protected int endPtr = 0;
-    protected int frontPtr = 0;
-    protected int size = 0;
-
-    public CircularQueue() {
-        this(DEFAULT_SIZE);
+    public DynamicQueue() {
+        super();
     }
 
-    public CircularQueue(int size) {
-        this.data = new int[size];
+    public DynamicQueue(int size) {
+        super(size);
     }
 
-    public boolean isFull() {
-        return size == data.length; // ptr is at last index
-    }
-
-    public boolean isEmpty() {
-        return endPtr == 0;
-    }
-
+    @Override
     public boolean insertItem(int item) {
         if (isFull()) {
             return false;
         }
-        data[endPtr++] = item;
-        endPtr = endPtr % data.length;
-        size++;
+        int[] temp = new int[data.length * 2];
+        for (int i = 0; i < data.length; i++) {
+            temp[i] = data[frontPtr + i] % data.length;
+        }
+
+
+        frontPtr = 0 ;
+        endPtr = data.length;
+        data = temp;
         return true;
 
-    }
-
-    public int removeItem() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Queue is empty");
-        }
-
-        int removed = data[frontPtr++];
-        frontPtr =  frontPtr % data.length;
-        size--;
-
-        return removed;
-    }
-
-    public int front() throws Exception {
-        if (isEmpty()) {
-            throw new Exception("Queue is empty");
-        }
-        return data[frontPtr];
-    }
-
-    public void display() {
-        for (int i = frontPtr; i < endPtr; i++) {
-            System.out.print(data[i] + " <- ");
-        }
-        System.out.println("END");
     }
 }
