@@ -99,4 +99,49 @@ public class CustomBinaryTree {
         prettyDisplay(node.left, level + 1);
     }
 
+    public void preOrder(){
+
+        preOrder(root);
+
+    }
+
+    private void preOrder(Node node) {
+        if(node == null){
+            return;
+        }
+        //preorder
+        System.out.println( "Node Value: " + node);
+        //left
+        preOrder(node.left);
+        //right
+        preOrder(node.right);
+
+    }
+
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.println("Node value: " + node);
+        inOrder(node.right);
+    }
+
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println("Node value: " + node);
+
+    }
 }
