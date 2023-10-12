@@ -12,21 +12,47 @@
 
 package trees;
 
-public class Main {
-    public static void main(String[] args) {
-//        CustomBinaryTree  customBinaryTree = new CustomBinaryTree();
-//
-//        //customBinaryTree.populate();
-//
-//        TrueAVL trueAVL = new TrueAVL();
-//        for (int i = 0; i < 1000; i++) {
-//            trueAVL.insert(i);
-//        }
-//        System.out.println(trueAVL.height());
-        int[] array = {3, 8, 6, 7, -2,  -8, 4, 9};
-        SegmentedTrees segmentedTrees = new SegmentedTrees();
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
+public class BinaryTreeOrderTraversal {
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
+    //BFT
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result =  new ArrayList<>();
+            if(root == null){
+                return  result;
+            }
 
+            Queue<TreeNode> treeNodeQueue =  new LinkedList<>();
+            treeNodeQueue.offer(root);
+            while (!treeNodeQueue.isEmpty()){
+                int levelSize =  treeNodeQueue.size();
+                for (int i = 0; i < levelSize; i++) {
+                    TreeNode currentNode  =  treeNodeQueue.poll();
 
+                }
+            }
+
+            return  result;
+    }
 }
