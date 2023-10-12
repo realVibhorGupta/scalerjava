@@ -17,7 +17,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BinaryTreeOrderTraversal {
+public class AverageOFLevelsOfBinaryTree {
+
+    //     Definition for a binary tree node.
     public static class TreeNode {
         int val;
         TreeNode left;
@@ -36,35 +38,37 @@ public class BinaryTreeOrderTraversal {
             this.right = right;
         }
     }
-    //BFT BFS
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
 
-        if (root == null) {
+        public List<Double> averageOfLevels(TreeNode root) {
+            List<Double> result = new ArrayList<>();
+            if (root == null) {
+                return result;
+            }
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.offer(root);
+            while (!queue.isEmpty()) {
+                int levelSize = queue.size();
+                double averageLevel = 0;
+                for (int i = 0; i < levelSize; i++) {
+                    TreeNode currentNode = queue.poll();
+                    if (currentNode != null) {
+                       averageLevel += currentNode.val;
+                        if (currentNode.left != null) {
+                            queue.offer(currentNode.left);
+                        }
+                        if (currentNode.right != null) {
+                            queue.offer(currentNode.right);
+                        }
+                    }
+
+                }
+                averageLevel = averageLevel / levelSize;
+                result.add(averageLevel);
+            }
             return result;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
+    public static void main(String[] args) {
 
-        while (!queue.isEmpty()) {
-            int levelSize = queue.size();
-            List<Integer> currentLevel = new ArrayList<>(levelSize);
-            for (int i=0; i < levelSize; i++) {
-                TreeNode currentNode = queue.poll();
-                if (currentNode != null) {
-                    currentLevel.add(currentNode.val);
-                    if (currentNode.left != null) {
-                        queue.offer(currentNode.left);
-                    }
-                    if (currentNode.right != null) {
-                        queue.offer(currentNode.right);
-                    }
-                }
-
-            }
-            result.add(currentLevel);
-        }
-        return result;
     }
 }
