@@ -32,6 +32,8 @@ public class LowestCommonAncestorofBinaryTree {
             this.right = right;
         }
     }
+
+    //O(logN)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null){
             return null;
