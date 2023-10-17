@@ -14,11 +14,11 @@ public class Alarm {
 
     public static void main(String[] args) {
 
-        String googol = "1";
-        int len  = googol.length();
-        int lenNew  = googol.length();
-        while (len < 101){
-            googol = googol + "0";
+        java.lang.StringBuilder googol = new java.lang.StringBuilder("1");
+        int len = googol.length();
+        int lenNew = googol.length();
+        while (len < 101) {
+            googol.append("0");
             len = googol.length();
 
 //            len++;

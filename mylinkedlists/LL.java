@@ -10,111 +10,164 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package mylinkedlists;import java.util.LinkedList;
-import java.util.Locale;
+package mylinkedlists;
 
 public class LL {
-    Node head;
+    private Node head;
+    private Node tail;
     private int size;
 
-    public LL(int size) {
+    public LL() {
         this.size = 0;
     }
 
-    LL() {
-        size = 0;
+    // https://leetcode.com/problems/merge-two-sorted-lists/submissions/
+    public static LL merge(LL first, LL second) {
+        Node f = first.head;
+        Node s = second.head;
+
+        LL ans = new LL();
+
+        while (f != null && s != null) {
+            if (f.value < s.value) {
+                ans.insertLast(f.value);
+                f = f.next;
+            } else {
+                ans.insertLast(s.value);
+                s = s.next;
+            }
+        }
+
+        while (f != null) {
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+
+        while (s != null) {
+            ans.insertLast(s.value);
+            s = s.next;
+        }
+
+        return ans;
     }
 
-    class Node {
-        String data;
-        Node next;
+    public static void main(String[] args) {
+        LL first = new LL();
+        LL second = new LL();
 
+        first.insertLast(1);
+        first.insertLast(3);
+        first.insertLast(5);
 
-        public Node(String data) {
-            this.data = data;
-            this.next = null;
-            size++;
+        second.insertLast(1);
+        second.insertLast(2);
+        second.insertLast(9);
+        second.insertLast(14);
+
+        LL ans = LL.merge(first, second);
+        ans.display();
+
+        LL list = new LL();
+        for (int i = 7; i > 0; i--) {
+            list.insertLast(i);
         }
-    }
-
-    public void addFirst(String data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-            return;
-        }
-        newNode.next = head;
-        head = newNode;
-    }
-
-    public void addLast(String data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-            return;
-        }
-        Node currentNode = head;
-        while (currentNode.next != null) {
-            currentNode = currentNode.next;
-        }
-        currentNode.next = newNode;
-    }
-
-
-    public void printList() {
-        Node currentNode = head;
-        if (head == null) {
-            System.out.println("List is Empty");
-            return;
-        }
-        while (currentNode.next != null) {
-            System.out.print(currentNode.next + "--->");
-            currentNode = currentNode.next;
-
-        }
-        System.out.println("null");
+        list.display();
+        list.bubbleSort();
+        list.display();
 
     }
 
-    public void deleteFirst() {
-        if (head == null) {
-            System.out.println("List is Empty");
-            return;
+    public int deleteLast() {
+        if (size <= 1) {
+            return deleteFirst();
         }
+
+        Node secondLast = get(size - 2);
+        int val = tail.value;
+        tail = secondLast;
+        tail.next = null;
         size--;
+        return val;
+    }
+
+    public int delete(int index) {
+        if (index == 0) {
+            return deleteFirst();
+        }
+        if (index == size - 1) {
+            return deleteLast();
+        }
+
+        Node prev = get(index - 1);
+        int val = prev.next.value;
+
+        prev.next = prev.next.next;
+        size--;
+        return val;
+    }
+
+    public Node find(int value) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
+    public Node get(int index) {
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
+    public int deleteFirst() {
+        int val = head.value;
         head = head.next;
-    }
-
-    public void deleteLast() {
-
         if (head == null) {
-            System.out.println("List is Empty");
-            return;
+            tail = null;
         }
         size--;
-        if (head.next == null) {
-            System.out.println("Head next is null");
-            head = null;
-            return;
-        }
-        Node traversingNode = head;
-        Node lastNode = head.next;
-        while (lastNode.next != null) {
-            lastNode = lastNode.next;
-            traversingNode = traversingNode.next;
-        }
-
-        traversingNode.next = null;
-
+        return val;
     }
 
-    public int getSize() {
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.value + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("END");
+    }
 
-        return size;
+    public void insertFirst(int val) {
+        Node node = new Node(val);
+        node.next = head;
+        head = node;
+
+        if (tail == null) {
+            tail = head;
+        }
+        size += 1;
+    }
+
+    public void insertLast(int val) {
+        if (tail == null) {
+            insertFirst(val);
+            return;
+        }
+        Node node = new Node(val);
+        tail.next = node;
+        tail = node;
+        size++;
     }
 
     public void reverseNode() {
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             System.out.println("Return Heqd is null");
             return;
         }
@@ -136,27 +189,120 @@ public class LL {
 
     }
 
-
-
-    public static void main(String[] args) {
-
-        LinkedList<String> stringLinkedList = new LinkedList<String>();
-        stringLinkedList.addFirst("a");
-        System.out.println(stringLinkedList.size());
-
-        stringLinkedList.addFirst("is");
-        System.out.println(stringLinkedList.size());
-
-        System.out.println(stringLinkedList);
-        String a = "Anc".toLowerCase(Locale.ROOT);
-        stringLinkedList.addLast("Linked");
-        System.out.println(stringLinkedList.size());
-
-        for (int i = 0; i < stringLinkedList.size(); i++) {
-            System.out.println(stringLinkedList.get(i) + "---->>");
-        }
-        System.out.println("NULL");
-
-//        list.
+    public void insertRec(int val, int index) {
+        head = insertRec(val, index, head);
     }
+
+    private Node insertRec(int val, int index, Node node) {
+        if (index == 0) {
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRec(val, index - 1, node.next);
+        return node;
+    }
+
+    public void duplicates() {
+        Node node = head;
+
+        while (node.next != null) {
+            if (node.value == node.next.value) {
+                node.next = node.next.next;
+                size--;
+            } else {
+                node = node.next;
+            }
+        }
+        tail = node;
+        tail.next = null;
+    }
+
+    public void bubbleSort() {
+        bubbleSort(size - 1, 0);
+    }
+
+    private void bubbleSort(int row, int col) {
+        if (row == 0) {
+            return;
+        }
+
+        if (col < row) {
+            Node first = get(col);
+            Node second = get(col + 1);
+
+            if (first.value > second.value) {
+                // swap
+                if (first == head) {
+                    head = second;
+                    first.next = second.next;
+                    second.next = first;
+                } else if (second == tail) {
+                    Node prev = get(col - 1);
+                    prev.next = second;
+                    tail = first;
+                    first.next = null;
+                    second.next = tail;
+                } else {
+                    Node prev = get(col - 1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+            }
+            bubbleSort(row, col + 1);
+        } else {
+            bubbleSort(row - 1, 0);
+        }
+    }
+
+    // recursion reverse
+    private void reverse(Node node) {
+        if (node == tail) {
+            head = tail;
+            return;
+        }
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
+    // in place reversal of linked list
+    // google, microsoft, apple, amazon: https://leetcode.com/problems/reverse-linked-list/
+    public void reverse() {
+        if (size < 2) {
+            return;
+        }
+
+        Node prev = null;
+        Node present = head;
+        Node next = present.next;
+
+        while (present != null) {
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null) {
+                next = next.next;
+            }
+        }
+        head = prev;
+    }
+
+    private class Node {
+        private int value;
+        private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
+
 }
