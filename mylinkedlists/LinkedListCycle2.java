@@ -12,12 +12,12 @@
 
 package mylinkedlists;
 
-public class LinkedListCycle {
+public class LinkedListCycle2 {
 
-    public boolean hasCycle(ListNode head) {
-        if (head == null) {
-            return false;
-        }
+    // https://leetcode.com/problems/linked-list-cycle-ii/
+    public ListNode detectCycle(ListNode head) {
+        int length = 0;
+
         ListNode fast = head;
         ListNode slow = head;
 
@@ -25,15 +25,32 @@ public class LinkedListCycle {
             fast = fast.next.next;
             slow = slow.next;
             if (fast == slow) {
-                return true;
+                length = cycleLength(slow);
+                break;
             }
-
-
         }
-        return false;
+
+        if (length == 0) {
+            return null;
+        }
+
+        // find the start node
+        ListNode f = head;
+        ListNode s = head;
+
+        while (length > 0) {
+            s = s.next;
+            length--;
+        }
+
+        // keep moving both forward and they will meet at cycle start
+        while (f != s) {
+            f = f.next;
+            s = s.next;
+        }
+        return s;
     }
 
-    //find the length of cycle
     public int cycleLength(ListNode head) {
         if (head == null) {
             return 0;
@@ -59,7 +76,6 @@ public class LinkedListCycle {
         }
         return 0;
     }
-
 
     private static class ListNode {
         int val;

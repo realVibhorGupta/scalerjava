@@ -12,67 +12,33 @@
 
 package mylinkedlists;
 
-public class LinkedListCycle {
+public class HappyNumber {
 
-    public boolean hasCycle(ListNode head) {
-        if (head == null) {
+    public boolean isHappy(int n) {
+        if (n == 0) {
             return false;
         }
-        ListNode fast = head;
-        ListNode slow = head;
 
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow) {
-                return true;
-            }
+        int slow = n;
+        int fast = n;
 
-
+        do {
+            slow = findSquare(slow);
+            fast = findSquare(findSquare(fast));
+        } while (fast != slow);
+        if (slow == 1) {
+            return true;
         }
         return false;
     }
 
-    //find the length of cycle
-    public int cycleLength(ListNode head) {
-        if (head == null) {
-            return 0;
+    private int findSquare(int number) {
+        int answer = 0;
+        while (number > 0) {
+            int remainder = number % 10;
+            answer += remainder * remainder;
+            number = number / 10;
         }
-        ListNode fast = head;
-        ListNode slow = head;
-
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow) {
-                //calculate the length
-                ListNode tempSlow = slow;
-                int length = 0;
-                do {
-                    tempSlow = tempSlow.next;
-                    length++;
-                } while (tempSlow != slow);
-                return length;
-            }
-
-
-        }
-        return 0;
-    }
-
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-
-
+        return answer;
     }
 }
