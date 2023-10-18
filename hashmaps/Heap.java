@@ -10,39 +10,20 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package mylinkedlists;
+package hashmaps;
 
-public class RemoveDuplicatesFromSortedList {
+import java.util.ArrayList;
 
-    ListNode deleteDuplicates(ListNode head) {
-        if (head == null) {
-            return null;
-        }
-        while (head.next != null) {
-            if (head.val == head.next.val) {
-                head.next = head.next.next;
-            } else {
-                head = head.next;
-            }
-        }
-        return head;
+public class Heap<T extends Comparable<T>> {
+    private final ArrayList<T> list;
+
+    public Heap(ArrayList<T> list) {
+        this.list = list;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
+    private void swap(int first, int second) {
+        T temp = list.get(first);
+        list.set(first, list.get(second));
+        list.set(second, temp);
     }
-
 }

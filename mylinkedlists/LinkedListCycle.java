@@ -12,20 +12,25 @@
 
 package mylinkedlists;
 
-public class RemoveDuplicatesFromSortedList {
+public class LinkedListCycle {
 
-    ListNode deleteDuplicates(ListNode head) {
+    public boolean hasCycle(ListNode head) {
         if (head == null) {
-            return null;
+            return false;
         }
-        while (head.next != null) {
-            if (head.val == head.next.val) {
-                head.next = head.next.next;
-            } else {
-                head = head.next;
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return true;
             }
+
+
         }
-        return head;
+        return false;
     }
 
     private static class ListNode {
@@ -35,14 +40,11 @@ public class RemoveDuplicatesFromSortedList {
         ListNode() {
         }
 
-        ListNode(int val) {
-            this.val = val;
+        ListNode(int x) {
+            val = x;
+            next = null;
         }
 
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
+
     }
-
 }
