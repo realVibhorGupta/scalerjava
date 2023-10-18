@@ -13,21 +13,20 @@
 package mylinkedlists;
 
 public class SortList {
-    public ListNode sortList(ListNode head) {
 
-        if (head == null && head.next == null) {
+    public ListNode sortList(ListNode head) {
+        if (head == null || head.next == null) {
             return head;
         }
 
         ListNode mid = getMid(head);
         ListNode left = sortList(head);
-        ListNode right = sortList(head);
+        ListNode right = sortList(mid);
 
-
-        return mergeSort(left, right);
+        return merge(left, right);
     }
 
-    ListNode mergeSort(ListNode list1, ListNode list2) {
+    ListNode merge(ListNode list1, ListNode list2) {
         ListNode dummyHead = new ListNode();
         ListNode tail = dummyHead;
         while (list1 != null && list2 != null) {
