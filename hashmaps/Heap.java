@@ -13,12 +13,54 @@
 package hashmaps;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class Heap<T extends Comparable<T>> {
     private final ArrayList<T> list;
 
     public Heap(ArrayList<T> list) {
         this.list = list;
+    }
+
+    public static void main(String[] args) {
+
+//        PriorityQueue<Integer> integers = new PriorityQueue<>();
+//        PriorityQueue<Integer> integersReverse = new PriorityQueue<>(Collections.reverseOrder());
+////log(n)
+//        integers.add(10);
+//        integers.add(50);
+//        integers.add(25);
+//        integers.add(20);
+//        integers.add(10);
+//
+//        //get O(logn)
+//        System.out.println(integers.remove());
+
+        int[] array = {10, 1, 4, 7, 2, 13, 3};
+        int k = 3;
+        kLargestElement(array, k);
+    }
+
+    public static void kLargestElement(int[] array, int k) {
+        PriorityQueue<Integer> priortyQueue = new PriorityQueue<>();
+        int window = 0;
+
+        while (window < k) {
+            priortyQueue.add(array[window]);
+            window++;
+        }
+
+        while (window < array.length) {
+            if (array[window] > priortyQueue.peek()) {
+                priortyQueue.remove();
+                priortyQueue.add(array[window]);
+            }
+            window++;
+        }
+
+        while (priortyQueue.size() > 0) {
+            System.out.println(priortyQueue.remove());
+        }
     }
 
     private void swap(int first, int second) {

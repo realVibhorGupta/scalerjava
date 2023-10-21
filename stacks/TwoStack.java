@@ -10,23 +10,16 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package trees;
+package stacks;
 
-public class Main {
-    public static void main(String[] args) {
-//        CustomBinaryTree  customBinaryTree = new CustomBinaryTree();
-//
-//        //customBinaryTree.populate();
-//
-//        TrueAVL trueAVL = new TrueAVL();
-//        for (int i = 0; i < 1000; i++) {
-//            trueAVL.insert(i);
+public class TwoStack {
+//    static int twoStacks(int x, int[] array1, int[] array2) {
+//        return twoStacks(x, array1, array2, 0, 0);
+//    }
+
+//    private static int twoStacks(int x, int[] array1, int[] array2, int sum, int count) {
+//        if (sum > x) {
+//            return count;
 //        }
-//        System.out.println(trueAVL.height());
-        int[] array = {3, 8, 6, 7, -2, -8, 4, 9};
-//        SegmentedTrees segmentedTrees = new SegmentedTrees();
-
-    }
-
-
+//    }
 }
