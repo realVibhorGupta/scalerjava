@@ -10,23 +10,57 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package hashmaps;
+package graphs;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
-public class HighestFrequencyCharacter {
+public class Graphs {
 
-    static void maxFrequencyOccurrence(String s) {
-        HashMap<Character, Integer> fmap = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (fmap.containsKey(ch)) {
-                int cfreq = fmap.get(ch);
-                fmap.put(ch, cfreq + 1);
+    public static void main(String[] args) {
+        int n = 3, m = 3;
+        int adj[][] = new int[n + 1][n + 1];
+        //edje 1=2
+        adj[1][2] = 1;
+        adj[2][1] = 1;
 
-            } else {
-                fmap.put(ch, 1);
+
+        //edge 2=3
+        adj[2][3] = 1;
+        adj[3][2] = 1;
+
+
+        //edge1= 3
+        adj[1][3] = 1;
+        adj[3][1] = 1;
+
+
+        //store adjency matrix
+//
+//        adj[u][v] = 1;
+//        adj[v][u] = 1;
+
+//        1
+//        List
+        ArrayList<ArrayList<Integer>> adjacentList = new ArrayList<ArrayList<Integer>>();
+//       n+1
+        for (int i = 0; i < n; i++) {
+            adjacentList.add(new ArrayList<>());
+        }
+        //edge 1=2
+        adjacentList.get(1).add(2);
+        adjacentList.get(2).add(1);
+
+        adjacentList.get(2).add(3);
+        adjacentList.get(3).add(2);
+
+        adjacentList.get(1).add(3);
+        adjacentList.get(3).add(1);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < adjacentList.get(i).size(); j++) {
+                System.out.print(adjacentList.get(i).get(j) + " ");
             }
+            System.out.println();
+
         }
 
     }

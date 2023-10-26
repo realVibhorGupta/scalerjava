@@ -12,22 +12,39 @@
 
 package hashmaps;
 
-import java.util.HashMap;
+import java.util.PriorityQueue;
 
-public class HighestFrequencyCharacter {
+public class KthLargest {
+    private final PriorityQueue<Integer> minHeap;
+    private final int k;
 
-    static void maxFrequencyOccurrence(String s) {
-        HashMap<Character, Integer> fmap = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (fmap.containsKey(ch)) {
-                int cfreq = fmap.get(ch);
-                fmap.put(ch, cfreq + 1);
+    public KthLargest(int k, int[] nums) {
+        this.k = k;
+        this.minHeap = new PriorityQueue<>(k);
+        for (int num : nums) {
+            add(num);
+        }
+    }
 
-            } else {
-                fmap.put(ch, 1);
-            }
+    public int add(int val) {
+        if (minHeap.size() < k) {
+            minHeap.add(val);
+        } else if (val > minHeap.peek()) {
+            minHeap.poll();
+            minHeap.add(val);
         }
 
+        return minHeap.peek();
     }
 }
+    public int findKthLargest(int[] nums, int k) {
+        if(nums.length == 0 || k == 0){
+            return 0;
+        }
+
+        return findKthLargestHelper(0,,k );
+    }
+
+    public int findKthLargestHelper(int[] nums, int k) {
+
+    }

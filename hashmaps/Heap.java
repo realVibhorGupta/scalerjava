@@ -42,24 +42,24 @@ public class Heap<T extends Comparable<T>> {
     }
 
     public static void kLargestElement(int[] array, int k) {
-        PriorityQueue<Integer> priortyQueue = new PriorityQueue<>();
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
         int window = 0;
 
         while (window < k) {
-            priortyQueue.add(array[window]);
+            priorityQueue.add(array[window]);
             window++;
         }
 
         while (window < array.length) {
-            if (array[window] > priortyQueue.peek()) {
-                priortyQueue.remove();
-                priortyQueue.add(array[window]);
+            if (array[window] > priorityQueue.peek()) {
+                priorityQueue.remove();
+                priorityQueue.add(array[window]);
             }
             window++;
         }
 
-        while (priortyQueue.size() > 0) {
-            System.out.println(priortyQueue.remove());
+        while (priorityQueue.size() > 0) {
+            System.out.println(priorityQueue.remove());
         }
     }
 
