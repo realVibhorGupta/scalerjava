@@ -10,49 +10,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package stacks;
+package substring;
 
-import java.util.Stack;
-
-public class ImplementQueuesUsingStacks {
-    private Stack<Integer> first;
-    private Stack<Integer> second;
-
-    public ImplementQueuesUsingStacks() {
-        first = new Stack<>();
-        second = new Stack<>();
-    }
-
-    public void add(int item) {
-        first.push(item);
-    }
-
-    public int remove() throws Exception {
-        while (!first.isEmpty()) {
-            second.push(first.pop());
-        }
-        int removed = second.pop();
-        while (!second.isEmpty()) {
-            first.push(second.pop());
-        }
-        return removed;
-    }
-
-    public int peek() {
-        while (!first.isEmpty()) {
-            second.push(first.pop());
-        }
-
-        int peeked = second.peek();
-
-        while (!second.isEmpty()) {
-            first.push(second.pop());
-        }
-        return peeked;
-    }
-
-    public boolean isEmpty() {
-        return first.isEmpty();
-    }
-
+public class SubStringSearchPattern {
 }
