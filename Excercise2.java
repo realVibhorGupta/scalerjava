@@ -10,6 +10,8 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import java.util.Scanner;
+
 public class Excercise2 {
     //Your friend Rahul plans to visit exotic countries all around the world.
     // Sadly, Rahul's math skills aren't good enough. Given the amount of money
@@ -33,10 +35,20 @@ public class Excercise2 {
 
 //    Output:-
 //    104
-    public static void main(String[] args){
+        public static void main(String[] args){
+            Scanner scanner = new Scanner(System.in);
 
+            // Read the values of N and M from the input
+            int N = scanner.nextInt(); //Total Savings
+            int M = scanner.nextInt();// the exchanging amount
 
+            // Calculate the remaining amount
+            int remainingAmount = N - M;
 
+            // Print the remaining amount
+            System.out.println(remainingAmount);
 
-    }
+            scanner.close();
+
+        }
 }

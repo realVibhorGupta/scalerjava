@@ -21,6 +21,7 @@ public class Excercise1 {
                 // E.g. 'Scanner' for input & 'System.out' for output
 
                 System.out.println("Hello");
+                System.out.println();
                 System.out.println("World" + "!");
 
 

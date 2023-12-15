@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2022. , Sunshine.Code <sunshinethelearningsite@gmail.com>
+ * Copyright (c) 2022-2023. , Sunshine.Code <sunshinethelearningsite@gmail.com>
  *   License: MIT
  * The MIT License (MIT).
- * Copyright © 2022, Sunshine.Code <sunshinethelearningsite@gmail.com>
+ * Copyright © 2023, Sunshine.Code <sunshinethelearningsite@gmail.com>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy   of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: .The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  *  .
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -14,18 +14,19 @@ public class Alarm {
 
     public static void main(String[] args) {
 
-        String googol = "1";
+       String googol = "1";
         int len  = googol.length();
         int lenNew  = googol.length();
         while (len < 101){
             googol = googol + "0";
             len = googol.length();
 
-//            len++;
+           len++;
             lenNew = googol.length();
         }
         System.out.println(googol);
         System.out.println("length of googol is : " + len);
         System.out.println("length of googol is : " + lenNew);
+
     }
 }

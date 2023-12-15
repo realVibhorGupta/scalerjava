@@ -12,18 +12,19 @@
 
 import java.util.Scanner;
 
-public class InputAndSum {
+public class E2Question2 {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int A  =  scanner.nextInt();
+        int B  =  scanner.nextInt();
+        int C  =  scanner.nextInt();
 
-    public static void main(StringClass[] args) {
-
-        int a , b ,c ;
-        Scanner sc = new Scanner(System.in);
-        a= sc.nextInt();
-        b= sc.nextInt();
-
-        c = a+b;
-        System.out.println("Sum of numbers are: " + c );
-
-
+        if(A==B & B==C){
+            System.out.println("Since all sides are same, hence it's a equilateral triangle.");
+        }else if(A == B && B != C || A!=B && B == C || B!=A && C==A){
+            System.out.println("Since one side is different, hence it's a isosceless triangle.");
+        }else{
+            System.out.println("Since all sides are different, hence it's a scalene triangle.");
+        }
     }
 }
