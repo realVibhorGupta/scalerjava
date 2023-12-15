@@ -13,17 +13,26 @@
 import java.util.Scanner;
 
 public class LinearSearch {
-    public static void main(StringClass[] args){
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        //This takes the length of the array!!
-        int[] array = new int[number];
-        //Input Loop
-        for (int i= 0  ; i < number; i++  ) {
 
-
+    public static boolean isAvailable(int arr[], int size, int element) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == element) {
+                return true;
+            }
         }
+        return false;
+    }
 
+    public static void main(String[] args) {
+
+//    Whether is 1 is present or not
+        int[] arr = {5, 7, -2, 10, 22, -2, 0, 5, 22, 1};
+        System.out.println("Enter The Element");
+        Scanner scanner = new Scanner(System.in);
         int key = scanner.nextInt();
+
+        boolean found = isAvailable(arr, 10, key);
+        System.out.println(found);
+//        Check weather It contains 1 or Not
     }
 }

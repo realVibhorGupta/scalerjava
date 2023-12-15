@@ -18,8 +18,6 @@ Q.idea/sonarlint/securityhotspotstore/b/9/b9db4802c80ff65570a6bc2cc8f17c6999f932
 Q.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,9/0/909762385fc6eb20f922a91c6865741308b57f2c
 w
 G.idea/sonarlint/issuestore/0/d/0dd773f4a52d570c658382ffef3cbb63089ba8ad,5/b/5b9e79893a229647ab09f34677c4a9300c15e03d
-O
-CountDigitsInAGiivenNumber.java,2/0/20e77011a98b8034885b93d3582e794a9b70625f
 ?
 AutoBoxing.java,9/c/9cf32642de3afe998be18f2e97a6c9e4faf30224
 =
@@ -30,6 +28,7 @@ J
 Arrays.java,f/7/f7ca844a15dbe7f70d79920de1e15e08574049ec
 <
 Pyramid.java,1/2/12ba71dad4c889c4193221d71aa9926cfdb39dd3
+<<<<<<< HEAD
 A
 LinearSearch.java,a/3/a377270e23397c383a79f5d534813dbf042e042e
 H
@@ -38,12 +37,17 @@ H
 SwitchCase.java,f/a/fa5ea0cbcd5296177bcf6053e201016eaf47caee
 G
 LogiclaAndOperator.java,0/6/061b3df2d6589d4d025a7546fade102558f0d46d
+=======
+?
+SwitchCase.java,f/a/fa5ea0cbcd5296177bcf6053e201016eaf47caee
+>>>>>>> origin/main
 7
 test.kt,b/6/b600e571325b38465b85b3b2ec102cea8eb4fec9
 >
 Delegations.kt,0/b/0b4f075244e05028f3373cf2a80662515164b9cf
 7
 .replit,e/2/e255e037e87583c6886a88ab92aee98483135150
+<<<<<<< HEAD
 K
 AriithmaticUsingSwitch.java,c/0/c0780dbc5569024fa396b07f4b0e9138ca084120
 ?
@@ -65,3 +69,9 @@ E
 ReverseOfAString.java,e/f/ef9c08ffa021ec88e8f403cc7fb138ed686c2f37
 ?
 Excercise2.java,c/1/c161a21d109b5345546d271f458d04e39349d4a2
+=======
+>
+TwoDArray.java,0\c\0c8a32a534898d88e1df61b79398fe5baa6adc63
+?
+SqaureRoot.java,8\5\85e5c72c3b56cfc3ddaf298eefe69c98960f12f2
+>>>>>>> origin/main
