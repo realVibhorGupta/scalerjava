@@ -37,14 +37,14 @@ public class KthLargest {
         return minHeap.peek();
     }
 }
-    public int findKthLargest(int[] nums, int k) {
-        if(nums.length == 0 || k == 0){
-            return 0;
-        }
-
-        return findKthLargestHelper(0,,k );
-    }
-
-    public int findKthLargestHelper(int[] nums, int k) {
-
-    }
+//    public int findKthLargest(int[] nums, int k) {
+//        if(nums.length == 0 || k == 0){
+//            return 0;
+//        }
+//
+//        return findKthLargestHelper(0,k );
+//    }
+//
+//    public int findKthLargestHelper(int[] nums, int k) {
+//
+//    }

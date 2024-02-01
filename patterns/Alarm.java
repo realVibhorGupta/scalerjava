@@ -10,31 +10,32 @@
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package patterns;public class Alarm {
+package patterns;
+public class Alarm {
 
-    public static void main(String[] args) {
-
-<<<<<<< HEAD
-       String googol = "1";
-        int len  = googol.length();
-        int lenNew  = googol.length();
-        while (len < 101){
-            googol = googol + "0";
-=======
-        java.lang.StringBuilder googol = new java.lang.StringBuilder("1");
-        int len = googol.length();
-        int lenNew = googol.length();
-        while (len < 101) {
-            googol.append("0");
->>>>>>> origin/main
-            len = googol.length();
-
-           len++;
-            lenNew = googol.length();
-        }
-        System.out.println(googol);
-        System.out.println("length of googol is : " + len);
-        System.out.println("length of googol is : " + lenNew);
-
-    }
+//    public static void main(String[] args) {
+//
+//
+//       String googol = "1";
+//        int len  = googol.length();
+//        int lenNew  = googol.length();
+//        while (len < 101){
+//            googol = googol + "0";
+//
+//       StringBuilder googol = new java.lang.StringBuilder("1");
+//        int len = googol.length();
+//        int lenNew = googol.length();
+//        while (len < 101) {
+//            googol.append("0");
+//
+//            len = googol.length();
+//
+//           len++;
+//            lenNew = googol.length();
+//        }
+//        System.out.println(googol);
+//        System.out.println("length of googol is : " + len);
+//        System.out.println("length of googol is : " + lenNew);
+//
+//    }
 }

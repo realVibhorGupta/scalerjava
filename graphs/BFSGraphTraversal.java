@@ -17,9 +17,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BFSGraphTraversal {
-
     public ArrayList<Integer> bfsOfGraph(int visited, ArrayList<ArrayList<Integer>> adjacentList) {
-
         ArrayList<Integer> bfs = new ArrayList<>();
         boolean[] vis = new boolean[visited];
         Queue<Integer> queue = new LinkedList<>();
@@ -29,14 +27,13 @@ public class BFSGraphTraversal {
         while (!queue.isEmpty()) {
             Integer node = queue.poll();
             bfs.add(node);
-            //gettingall the adjacent Vertices
+            //getting all the adjacent Vertices
             for (Integer it : adjacentList.get(node)) {
                 if (!vis[it]) {
                     vis[it] = true;
                     queue.add(it);
                 }
             }
-
         }
         return bfs;
     }

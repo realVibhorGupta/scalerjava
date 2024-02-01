@@ -12,8 +12,6 @@
 
 package hashmaps;
 
-import org.intellij.lang.annotations.Flow;
-import org.intellij.lang.annotations.Identifier;
 
 import java.util.ArrayList;
 import java.util.HashMap;
